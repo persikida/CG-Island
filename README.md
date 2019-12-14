@@ -6,8 +6,7 @@
 ## Description
 ---------------
 
-Devansh Dalal <br>
-Note: All the code is mainly implemented in Python. 
+Note: All the code is mainly implemented in R. 
 
 ### Finding CGs islands in the sequence
 
