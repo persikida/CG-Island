@@ -59,8 +59,10 @@ create_simulated_data<- function(){
    
    non_cg_len= 300:1000 ## Length of non-cg islands is usually larger than CG
    cg_len= 200:500
+   N <- 50
    
-   for(i in 1:20){
+   
+   for(i in 1:N){
       
       if(runif(1)<0.6){ ## Probablity of CG island in the sequence is 0.4
          seq= markovchainSequence(
@@ -83,7 +85,7 @@ create_simulated_data<- function(){
       training_set$seq=  c(training_set$seq, seq) 
       training_set$tag=  c(training_set$tag, rep(tag, length(seq)))
       
-      if(runif(1)<0.6){ ## Probablity of CG island in the sequence is 0.4
+      if(runif(1.02)<0.6){ ## Probablity of CG island in the sequence is 0.4
          test_seq= markovchainSequence(
             n=sample(non_cg_len, 1), 
             markovchain=non_cg_islands_mc, 
@@ -104,7 +106,6 @@ create_simulated_data<- function(){
       test_set$seq=  c(test_set$seq, test_seq)
       test_set$tag=  c(test_set$tag, rep(tag, length(test_seq)))
    }
-   
    return(list(training_set=training_set, test_set=test_set))
 }
 
