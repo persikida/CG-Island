@@ -5,6 +5,8 @@ library(data.table)
 create_simulated_data<- function(){
    
    statesNames= c("A", "C", "G", "T")
+
+   
    
 ####### Transition Probabilities for CpG Islands
 ##                A	      C	      G	      T
@@ -13,7 +15,8 @@ create_simulated_data<- function(){
 ##          G	0.161	   0.339	   0.375	   0.125
 ##          T	0.079	   0.355	   0.384	   0.182
 ##     station 0.155	   0.341	   0.350	   0.154
-   
+
+
    cg_islands_mc = new(
       "markovchain", 
       transitionMatrix=matrix(
